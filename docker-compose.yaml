@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  upload-server:
+    build:
+        context: upload-server
+    ports:
+      - "8888:8888"
+      - "8899:8899"

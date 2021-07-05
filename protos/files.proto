@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "src/pb";
+
+service ImageService {
+   rpc UploadImage(stream UploadRequest) returns (UploadResponse) {};
+}
+
+message UploadRequest {
+  oneof data {
+    string file_name = 1;
+    bytes chunk_data = 2;
+  };
+}
+
+message UploadResponse {
+  string url = 1;
+}
